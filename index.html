@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>my cv wedpages</title>
+  <p>
+   <H1 id="animated-text">LET US LEARN WEB TO IMPROVE OUR PROGRAMMING SKILLS</H1>
+  </p> 
+</head>
+<style> 
+   image{
+      width:150px;
+      height: 150px;
+      border-radius: 50%;
+      image-align: center;
+   
+   }
+   #animated-text span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+   }
+
+   #animated-text.visible span.reveal{
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+</style>
+<image src="ailox.jpeg" width="200" height="200">
+<body bgcolor="YELLOW">
+ <header>
+    <h>WONDERFUL PEOPLE WELCOME TO MY HOME PAGE</h>
+
+    <H2>NOTE:TO SEE MY CV TAP TO THE VEIW MORE</H2>
+    <p><li><a href="home.html"><i>view more <b>cv</b> profile</i></a></li></p>
+ </header>
+ <script>
+   // creating the animated one using DOM
+   const textElement = document.getElementById("animated-text");
+   const words = textElement.textContent.split(" ");
+
+   // clear the original text
+   textElement.textContent= "";
+
+   // wrap each word in span and append it back to the DOM 
+   words.forEach((word) => {
+      const span = document.createElement("span");
+      span.textContent = word + " ";
+      textElement.appendChild(span);
+   }); 
+   textElement.classList.add("visible");
+
+   // Reveal each word in sequence, then repeat the animation.
+   const spans = textElement.querySelectorAll("span");
+   const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+   async function animateWords() {
+      while (true) {
+         for (const span of spans) {
+            span.classList.add("reveal");
+            await wait(200);
+         }
+         await wait(1000);
+         spans.forEach((span) => span.classList.remove("reveal"));
+         await wait(400);
+      }
+   }
+
+   animateWords();
+
+ </script>
+</body>
+</html>
