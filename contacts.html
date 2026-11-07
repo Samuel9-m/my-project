@@ -1,48 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>SAMUEL WESONGA |CONTACTS WEBPAGE</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SAMUEL WESONGA | CONTACTS WEBPAGE</title>
+   <style>
+      :root {
+         --lightblue: #add8e6;
+         --dark: #14213d;
+         --green: #0a6b1f;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+         margin: 0;
+         display: flex;
+         flex-direction: column;
+         min-height: 100vh;
+         background: var(--lightblue);
+         color: var(--dark);
+         font-family: "Segoe UI", Arial, sans-serif;
+         line-height: 1.8;
+      }
+
+      header, main, footer { padding: 20px 48px; }
+
+      main { flex: 1; }
+
+      h1 {
+         margin: 0;
+         font-size: clamp(1.4rem, 4vw, 2.2rem);
+         font-weight: 800;
+      }
+
+      p { margin: 0 0 8px 0; }
+
+      hr {
+         border: none;
+         border-top: 3px solid var(--dark);
+         margin: 24px 0;
+      }
+
+      h3 { margin: 0 0 14px 0; }
+
+      label { font-weight: 600; }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+         width: 100%;
+         max-width: 420px;
+         padding: 10px;
+         margin-top: 4px;
+         border: 2px solid var(--dark);
+         border-radius: 8px;
+         font: inherit;
+         background: #fff;
+      }
+
+      input[type="submit"] {
+         padding: 10px 30px;
+         background: var(--dark);
+         color: var(--lightblue);
+         border: none;
+         border-radius: 50px;
+         font: inherit;
+         font-weight: 700;
+         cursor: pointer;
+      }
+
+      input[type="submit"]:hover { opacity: 0.85; }
+
+      .links a {
+         color: var(--dark);
+         font-weight: 700;
+         margin-right: 18px;
+      }
+
+      footer {
+         border-top: 3px solid var(--dark);
+         text-align: center;
+      }
+
+      footer p {
+         margin: 0;
+         color: var(--green);
+         font-weight: 700;
+      }
+   </style>
 </head>
-<body bgcolor="#ADD8E6 ">
-    <br><h1><b>HI;AM SAMUEL WESONGA WELCOME TO MY CV WEBSITE</h1></br></b>
+<body>
 
- <header>
-    
+   <header>
+      <h1>HI, I AM SAMUEL WESONGA. WELCOME TO MY CV WEBSITE</h1>
+   </header>
 
-<main>
+   <main>
+      <p><strong>Phone:</strong> 0721925192</p>
+      <p><strong>Email:</strong> samuelshikuku25@gmail.com</p>
+      <p><strong>Home city:</strong> Nakuru</p>
 
-<p>Phone: 0721925192</p>
-<p>Email: samuelshikuku25@gmail.com</p>
-<p>home city: Nakuru</p>
+      <hr>
 
+      <h3>Contact form</h3>
+      <form action="mailto:samuelshikuku25@gmail.com"
+            method="post"
+            enctype="text/plain">
 
-<hr>
-<h3>Contact form</h3>
-<form action="mailto:samuelshikuku2@gmail.com"
-method="post"
-enctype="text/plain">
-<label>Enter your name:</label><br>
-<input type="text" name="Name" required><br><br>
-<label>Enter your email:</label><br>
-<input type="email" name="Email" required><br><br>
-<label>Message subject:</label><br>
-<input type="text" name="subject" required><br><br>
-<label>Enter your message:</label><br>
-<textarea name="Message" rows="8"cols="35" required></textarea><br><br>
-<input type="submit" value="send">
-</form>
-</section>
-<br>
-</main>
-    <a href="index.html">home</a>&nbsp;&nbsp;<a href="home.html">back</a>
+         <label for="name">Enter your name:</label><br>
+         <input type="text" id="name" name="Name" required><br><br>
 
-    <br>
+         <label for="email">Enter your email:</label><br>
+         <input type="email" id="email" name="Email" required><br><br>
 
-<footer>
-   
-    <p style="color: green;">&copy; 2026 Samuel Wesonga</p>
+         <label for="subject">Message subject:</label><br>
+         <input type="text" id="subject" name="subject" required><br><br>
 
-</footer>
+         <label for="message">Enter your message:</label><br>
+         <textarea id="message" name="Message" rows="8" cols="35" required></textarea><br><br>
+
+         <input type="submit" value="Send">
+      </form>
+
+      <hr>
+
+      <p class="links">
+         <a href="index.html">Home</a>
+         <a href="home.html">Back</a>
+      </p>
+   </main>
+
+   <footer>
+      <p>&copy; 2026 Samuel Wesonga</p>
+   </footer>
 
 </body>
 </html>
