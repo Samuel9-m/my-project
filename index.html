@@ -1,74 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>SAMUEL WESONGA |PERSONAL CV</title>
-  <p>
-   <H1 id="animated-text">LET US LEARN WEB TO IMPROVE OUR PROGRAMMING SKILLS</H1>
-  </p> 
-</head>
-<style> 
-   image{
-      width:150px;
-      height: 150px;
-      border-radius: 50%;
-      image-align: center;
-   
-   }
-   #animated-text span {
-      display: inline-block;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-   }
-
-   #animated-text.visible span.reveal{
-      opacity: 1;
-      transform: translateY(0);
-   }
-
-</style>
-<image src="ailox.jpeg" width="200" height="200">
-<body bgcolor="YELLOW">
- <header>
-    <h>WONDERFUL PEOPLE WELCOME TO MY HOME PAGE</h>
-
-    <H2>NOTE:TO SEE MY CV TAP TO THE VEIW MORE</H2>
-    <p><li><a href="home.html"><i>view more <b>cv</b> profile</i></a></li></p>
- </header>
- <script>
-   // creating the animated one using DOM
-   const textElement = document.getElementById("animated-text");
-   const words = textElement.textContent.split(" ");
-
-   // clear the original text
-   textElement.textContent= "";
-
-   // wrap each word in span and append it back to the DOM 
-   words.forEach((word) => {
-      const span = document.createElement("span");
-      span.textContent = word + " ";
-      textElement.appendChild(span);
-   }); 
-   textElement.classList.add("visible");
-
-   // Reveal each word in sequence, then repeat the animation.
-   const spans = textElement.querySelectorAll("span");
-   const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-   async function animateWords() {
-      while (true) {
-         for (const span of spans) {
-            span.classList.add("reveal");
-            await wait(200);
-         }
-         await wait(1000);
-         spans.forEach((span) => span.classList.remove("reveal"));
-         await wait(400);
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SAMUEL WESONGA | PERSONAL CV</title>
+   <style>
+      /* Only two colours: yellow and dark blue */
+      :root {
+         --yellow: #ffd60a;
+         --dark: #14213d;
       }
-   }
 
-   animateWords();
+      * { box-sizing: border-box; }
 
- </script>
+      body {
+         margin: 0;
+         background: var(--yellow);
+         color: var(--dark);
+         font-family: "Segoe UI", Arial, sans-serif;
+         line-height: 1.8;
+      }
+
+      .container {
+         max-width: 800px;
+         margin: 0 auto;
+         padding: 40px 24px 60px;
+      }
+
+      /* Photo on the top left */
+      .photo {
+         display: block;
+         width: 160px;
+         height: 160px;
+         object-fit: cover;
+         border-radius: 50%;
+         border: 4px solid var(--dark);
+         margin: 0 0 20px 0;
+      }
+
+      /* Horizontal rule below the photo */
+      hr {
+         border: none;
+         border-top: 3px solid var(--dark);
+         margin: 0 0 30px 0;
+      }
+
+      #animated-text {
+         margin: 0 0 10px 0;
+         font-size: clamp(1.5rem, 4vw, 2.3rem);
+         font-weight: 800;
+         line-height: 1.3;
+      }
+
+      #animated-text span {
+         display: inline-block;
+         opacity: 0;
+         transform: translateY(14px);
+         transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      #animated-text span.reveal {
+         opacity: 1;
+         transform: translateY(0);
+      }
+
+      .welcome {
+         margin: 0 0 40px 0;
+         font-size: 1.1rem;
+         font-weight: 600;
+      }
+
+      h2 {
+         margin: 36px 0 8px 0;
+         font-size: 1.3rem;
+         border-bottom: 2px solid var(--dark);
+         display: inline-block;
+         padding-bottom: 2px;
+      }
+
+      p { margin: 0 0 16px 0; }
+
+      .note { margin-top: 50px; }
+
+      .note a {
+         color: var(--yellow);
+         background: var(--dark);
+         text-decoration: none;
+         font-weight: 700;
+         padding: 12px 28px;
+         border-radius: 50px;
+         display: inline-block;
+      }
+
+      .note a:hover { opacity: 0.85; }
+   </style>
+</head>
+<body>
+   <div class="container">
+
+      <!-- Photo on the top left -->
+      <img class="photo" src="ailox.jpeg" alt="Photo of Samuel Wesonga">
+
+      <!-- Horizontal rule below the photo -->
+      <hr>
+
+      <h1 id="animated-text">LET US LEARN WEB TO IMPROVE OUR PROGRAMMING SKILLS</h1>
+      <p class="welcome">Wonderful people, welcome to my home page!</p>
+
+      <h2>My Names</h2>
+      <p>
+         Hello! My name is <strong>Samuel Wesonga</strong>. I am a determined,
+         curious and hardworking learner who loves turning ideas into
+         real, working technology.
+      </p>
+
+      <h2>My Course and Offering</h2>
+      <p>
+         I am pursuing <strong>Information Technology</strong>. The course
+         gives me a strong foundation in web development, programming,
+         databases, networking and systems design.
+      </p>
+      <p>
+         With these skills, I can build websites and applications, set up and
+         manage networks, organise and secure data, and help individuals and
+         businesses solve problems using technology.
+      </p>
+
+      <h2>My Background</h2>
+      <p>
+         My passion for technology began with simple curiosity: wondering how
+         phones, websites and computers actually work. That curiosity grew
+         into a habit of practising every day, writing code, fixing errors
+         and learning from every mistake.
+      </p>
+      <p>
+         Along the way I have learned patience, teamwork and problem solving,
+         qualities that help me approach every project with confidence. I
+         believe that every great developer starts as a beginner who refuses
+         to give up.
+      </p>
+
+      <h2>What I Hope to Do After My Course</h2>
+      <p>
+         My big dream is to <strong>create my own company</strong>: a
+         technology company that designs websites, builds software and offers
+         IT solutions to small businesses and communities.
+      </p>
+      <p>
+         I want to create jobs for other young people, make technology
+         affordable and accessible, and prove that with skills,
+         discipline and hard work, anyone can build something great.
+      </p>
+
+      <div class="note">
+         <p><strong>NOTE: TO SEE MY CV, TAP "VIEW MORE"</strong></p>
+         <a href="home.html">View more CV profile</a>
+      </div>
+
+   </div>
+
+   <script>
+      // Animated heading using the DOM
+      const textElement = document.getElementById("animated-text");
+      const words = textElement.textContent.split(" ");
+
+      textElement.textContent = "";
+
+      words.forEach((word) => {
+         const span = document.createElement("span");
+         span.textContent = word + "\u00A0";
+         textElement.appendChild(span);
+      });
+
+      const spans = textElement.querySelectorAll("span");
+      const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      async function animateWords() {
+         while (true) {
+            for (const span of spans) {
+               span.classList.add("reveal");
+               await wait(200);
+            }
+            await wait(1000);
+            spans.forEach((span) => span.classList.remove("reveal"));
+            await wait(400);
+         }
+      }
+
+      animateWords();
+   </script>
 </body>
 </html>
