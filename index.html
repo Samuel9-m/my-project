@@ -22,9 +22,9 @@
       }
 
       .container {
-         max-width: 800px;
+         width: 100%;          /* fill the whole page */
          margin: 0;            /* start from the left edge */
-         padding: 40px 24px 60px;
+         padding: 40px 48px 60px;
          text-align: left;
       }
 
@@ -46,23 +46,31 @@
          margin: 0 0 30px 0;
       }
 
-      #animated-text {
+      /* Name moves from left to right across the page */
+      .name-track {
+         position: relative;
+         width: 100%;
+         height: 3.5rem;
          margin: 0 0 10px 0;
-         font-size: clamp(1.5rem, 4vw, 2.3rem);
+         overflow: hidden;
+      }
+
+      #animated-text {
+         position: absolute;
+         top: 0;
+         left: 0;
+         margin: 0;
+         white-space: nowrap;
+         font-size: clamp(1.8rem, 4vw, 2.8rem);
          font-weight: 800;
          line-height: 1.3;
+         animation: moveRight 10s linear infinite;
       }
 
-      #animated-text span {
-         display: inline-block;
-         opacity: 0;
-         transform: translateY(14px);
-         transition: opacity 0.4s ease, transform 0.4s ease;
-      }
-
-      #animated-text span.reveal {
-         opacity: 1;
-         transform: translateY(0);
+      /* Enters from the left edge, leaves at the right edge, then repeats */
+      @keyframes moveRight {
+         0%   { left: 0;    transform: translateX(-100%); }
+         100% { left: 100%; transform: translateX(0); }
       }
 
       .welcome {
@@ -105,7 +113,9 @@
       <!-- Horizontal rule below the photo -->
       <hr>
 
-      <h1 id="animated-text">LET US LEARN WEB TO IMPROVE OUR PROGRAMMING SKILLS</h1>
+      <div class="name-track">
+         <h1 id="animated-text">SAMUEL WESONGA</h1>
+      </div>
       <p class="welcome">Wonderful people, welcome to my home page!</p>
 
       <h2>My Names</h2>
@@ -160,35 +170,5 @@
 
    </div>
 
-   <script>
-      // Animated heading using the DOM
-      const textElement = document.getElementById("animated-text");
-      const words = textElement.textContent.split(" ");
-
-      textElement.textContent = "";
-
-      words.forEach((word) => {
-         const span = document.createElement("span");
-         span.textContent = word + "\u00A0";
-         textElement.appendChild(span);
-      });
-
-      const spans = textElement.querySelectorAll("span");
-      const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-      async function animateWords() {
-         while (true) {
-            for (const span of spans) {
-               span.classList.add("reveal");
-               await wait(200);
-            }
-            await wait(1000);
-            spans.forEach((span) => span.classList.remove("reveal"));
-            await wait(400);
-         }
-      }
-
-      animateWords();
-   </script>
 </body>
 </html>
