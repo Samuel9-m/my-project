@@ -1,40 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>SAMUEL WESONGA |EDUCATIONAL BACKGROUND WEBPAGE</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SAMUEL WESONGA | EDUCATIONAL BACKGROUND WEBPAGE</title>
+   <style>
+      :root {
+         --lightblue: #add8e6;
+         --dark: #14213d;
+         --green: #0a6b1f;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+         margin: 0;
+         display: flex;
+         flex-direction: column;
+         min-height: 100vh;
+         background: var(--lightblue);
+         color: var(--dark);
+         font-family: "Segoe UI", Arial, sans-serif;
+         line-height: 1.8;
+      }
+
+      header, main, footer { padding: 20px 48px; }
+
+      main { flex: 1; }
+
+      h1 {
+         margin: 0;
+         font-size: clamp(1.4rem, 4vw, 2.2rem);
+         font-weight: 800;
+      }
+
+      hr {
+         border: none;
+         border-top: 3px solid var(--dark);
+         margin: 0 0 24px 0;
+      }
+
+      h2 {
+         margin: 0 0 18px 0;
+         font-size: 1.5rem;
+         display: inline-block;
+         border-bottom: 3px solid var(--dark);
+         padding-bottom: 3px;
+      }
+
+      /* Table */
+      .table-wrap { overflow-x: auto; }
+
+      table {
+         width: 100%;
+         border-collapse: collapse;
+         border: 1px solid var(--green);
+      }
+
+      th, td {
+         padding: 14px 18px;
+         text-align: left;
+         border: 1px solid var(--green);
+      }
+
+      td { background: #fff; }
+
+      /* Table headings coloured light blue */
+      th {
+         background: var(--lightblue);
+         color: var(--dark);
+         letter-spacing: 0.5px;
+      }
+
+      tbody tr:hover td { background: #e8f4f8; }
+
+      .links {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 14px;
+         margin-top: 30px;
+      }
+
+      .links a {
+         display: inline-block;
+         padding: 8px 24px;
+         border: 3px solid var(--dark);
+         border-radius: 50px;
+         color: var(--dark);
+         text-decoration: none;
+         font-size: 1rem;
+         font-weight: 700;
+         box-shadow: 0 4px 0 var(--dark);
+         transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .links a:hover {
+         background: var(--dark);
+         color: var(--lightblue);
+         transform: translateY(2px);
+         box-shadow: 0 2px 0 var(--dark);
+      }
+
+      .links a:active {
+         transform: translateY(4px);
+         box-shadow: 0 0 0 var(--dark);
+      }
+
+      .links a.home {
+         background: var(--dark);
+         color: var(--lightblue);
+      }
+
+      .links a.home:hover {
+         background: transparent;
+         color: var(--dark);
+      }
+
+      footer {
+         border-top: 3px solid var(--dark);
+         text-align: center;
+      }
+
+      footer p {
+         margin: 0;
+         color: var(--green);
+         font-weight: 700;
+      }
+   </style>
 </head>
-<body bgcolor="#ADD8E6">
-    <br><h1><b>HI;AM SAMUEL WESONGA WELCOME TO MY CV WEBSITE</h1></br></b>
+<body>
 
- <header>
-    <h2>my educational background</h2>
+   <header>
+      <h1>HI, I AM SAMUEL WESONGA. WELCOME TO MY CV WEBSITE</h1>
+   </header>
 
-    <table width="100%" border="1" bordercolor="green" cellpadding="10" cellspacing="0">
+   <main>
+      <hr>
 
-        <tr bgcolor="lightblue">
-            <th>Date</th>
-            <th>Institutions Attended</th>
-            <th>Awards Given</th>
-        </tr>
+      <h2>MY EDUCATIONAL BACKGROUND</h2>
 
-        <tr>
-            <td>2025/2026 - Present</td>
-            <td>Kisii University</td>
-            <td>waitting</td>
-        </tr>
+      <div class="table-wrap">
+         <table>
+            <thead>
+               <tr>
+                  <th>Date</th>
+                  <th>Institutions Attended</th>
+                  <th>Awards Given</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>2025/2026 - Present</td>
+                  <td>Kisii University</td>
+                  <td>Awaiting</td>
+               </tr>
+               <tr>
+                  <td>2021 - 2024</td>
+                  <td>Navakholo High School</td>
+                  <td>KCSE Certificate</td>
+               </tr>
+               <tr>
+                  <td>2013 - 2020</td>
+                  <td>Mount Olive Primary School</td>
+                  <td>KCPE Certificate</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
 
-        <tr>
-            <td>2021 - 2024</td>
-            <td>Navakholo High School</td>
-            <td>KCSE Certificate</td>
-        </tr>
+      <div class="links">
+         <a class="home" href="index.html">&#8962; Home</a>
+         <a href="home.html">&larr; Back</a>
+      </div>
+   </main>
 
-        <tr>
-            <td>2013 - 2020</td>
-            <td>Mout olive Primary School</td>
-            <td>KCPE Certificate</td>
-        <tr>
+   <footer>
+      <p>&copy; 2026 Samuel Wesonga</p>
+   </footer>
 
-    </table>
-<a href="index.html">home</a>&nbsp;&nbsp;<a href="home.html">back</a>
+</body>
 </html>
